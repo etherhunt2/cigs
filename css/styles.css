@@ -40,7 +40,7 @@ body {
 }
 
 .logo img {
-  height: 40px;
+  height: 80px;
   width: auto;
 }
 
@@ -100,7 +100,7 @@ body {
 }
 
 .hero-text h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   color: var(--text-color);
@@ -601,7 +601,8 @@ body {
 
 .impact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -609,11 +610,14 @@ body {
 }
 
 .impact-item {
-  text-align: center;
+  text-align: left;
   padding: 2rem;
   background: rgba(121, 226, 95, 0.05);
   border-radius: 15px;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .impact-item:hover {
@@ -1083,6 +1087,8 @@ body {
 .footer-content {
   display: flex;
   justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 100px;
 }
 
 .footer-logo-section {
@@ -1141,19 +1147,20 @@ body {
 
 .footer-tagline {
   text-align: left;
-  top: 0;
   width: 100%;
   height: 100%;
-  margin-left: 5rem;
-  padding-left: 2rem;
-  padding-top: 4rem;
+  padding: 4rem 0 0 4rem;
   flex-direction: row;
   background: #5bb61ecc;
+  position: relative;
+  left: 10%;
+  /* transform: translateX(-50%); */
 }
 
 .footer-tagline h2 {
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 100;
+  padding-bottom: 2rem;
   top: 0;
   color: #fffafa;
 }
@@ -1184,14 +1191,21 @@ body {
     justify-content: center;
   }
 
+  .footer-tagline {
+    padding-top: 1rem;
+    margin-top: 1rem;
+    left: 0;
+    min-width: 100vw;
+  }
+
   .footer-tagline h2 {
-    font-size: 1.8rem;
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 3rem 0 1.5rem;
+    padding: 3rem 0 0;
   }
 
   .footer-links {
@@ -1205,7 +1219,11 @@ body {
   }
 
   .footer-tagline {
-    margin-left: 0;
+    margin: 0;
+    left: 0;
+    padding-top: 1rem;
+    width: 100vw;
+    min-height: 100%;
   }
 
   .footer-tagline h2 {
